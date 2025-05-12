@@ -1,0 +1,33 @@
+//5 Objects
+[
+  {
+    "Comment": "School is open",
+    "SentBy": "Vice-Principal",
+    "SetDate": "04-05-2025",
+    "SetTime": "08:33:47"
+  },
+  {
+    "Comment": "School is closed",
+    "SentBy": "Principal",
+    "SetDate": "05-05-2025",
+    "SetTime": "09:13:07"
+  },
+  {
+    "Comment": "Holiday Homework compulsory",
+    "SentBy": "Teacher",
+    "SetDate": "06-05-2025",
+    "SetTime": "18:56:25"
+  },
+  {
+    "Comment": "Come in sports uniform tomorrow",
+    "SentBy": "P.T. Teacher",
+    "SetDate": "07-05-2025",
+    "SetTime": "13:00:03"
+  },
+  {
+    "Comment": "Submit fees",
+    "SentBy": "Director",
+    "SetDate": "08-05-2025",
+    "SetTime": "10:07:41"
+  }
+]

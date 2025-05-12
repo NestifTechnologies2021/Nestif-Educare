@@ -1,0 +1,30 @@
+
+<Shell
+    x:Class="SchoolApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SchoolApp"
+   
+    xmlns:model="clr-namespace:SchoolApp.Models"
+    Shell.TabBarIsVisible="False"
+    xmlns:views="clr-namespace:SchoolApp.Views">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Route="LoginPage" />
+
+    <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Home" Icon="{x:Static model:Icons.Dashboard}" ContentTemplate="{DataTemplate views:HomePage}" />
+        <ShellContent Title="Contact" Icon="{x:Static model:Icons.ContactUs}" ContentTemplate="{DataTemplate views:ContactPage}" />
+        <ShellContent Title="About" Icon="{x:Static model:Icons.AboutUs}" ContentTemplate="{DataTemplate views:AboutPage}" />
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="LightGreen"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+</Shell>

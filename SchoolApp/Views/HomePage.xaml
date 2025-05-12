@@ -1,0 +1,188 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SchoolApp.Views.HomePage"
+             Title="School"
+             BackgroundColor="#E8F8F5">
+    
+    <Grid BackgroundColor="MintCream">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Row 0 -->
+        
+    <!--<Grid Grid.Row="0" Grid.Column="1" VerticalOptions="Fill">-->
+        <StackLayout Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center">
+            <Label 
+  Text=  "{Binding Username}"
+    FontFamily="Strande2"
+    TextColor="Black"
+    VerticalTextAlignment="Center"
+    HorizontalTextAlignment="Center"
+    VerticalOptions="Center"
+    HeightRequest="50"
+    FontSize="Medium"/>
+    <!--</Grid>-->
+
+        </StackLayout>
+
+        <!-- Row 1 -->
+       <StackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+                <!--<BoxView Grid.Row="1" Grid.Column="0" Color="#E8F8F5" Margin="0,5,0,5" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame Grid.Row="1" BorderColor="Transparent" Padding="10" HasShadow="False" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="Announcement_Clicked" Grid.Row="1" Grid.Column="0" Source="announcement.png" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="1" Grid.Column="0" Text="Announcement" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+        </StackLayout>
+       
+        <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+                <!--<BoxView Grid.Row="1" Grid.Column="1" Color="#E8F8F5" Margin="0,5,0,5" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame BorderColor="Transparent" Padding="10" HasShadow="False" BackgroundColor="#E8F8F5" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="Homework_Clicked" Grid.Row="1" Grid.Column="1" Source="homework.png" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="1" Grid.Column="1" Text="Homework" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+                <!--<BoxView Grid.Row="1" Grid.Column="2" Color="#E8F8F5" Margin="0,5,0,5" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame BorderColor="Transparent" Padding="10" HasShadow="False" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="Attendance_Clicked" Grid.Row="1" Grid.Column="2" Source="attendance.png" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="1" Grid.Column="2" Text="Attendance" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+        </StackLayout>
+
+    <!-- Row 2 -->
+        <StackLayout Grid.Row="2" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+                <!--<BoxView Grid.Row="2" Color="#E8F8F5" Margin="0,5,0,5" HeightRequest="100" BackgroundColor="Transparent" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame BorderColor="Transparent" Padding="10" HasShadow="False" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="Marks_Clicked" Grid.Row="2" Grid.Column="0" Source="marks.jpg" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="2" Text="Marks" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+                <!--<BoxView Grid.Row="2" Grid.Column="1" Color="#E8F8F5" Margin="0,5,0,5" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame BorderColor="Transparent" Padding="10" HasShadow="False" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="EContent_Clicked" Grid.Row="2" Grid.Column="1" Source="econtent.png" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="2" Grid.Column="1" Text="E-Content" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+                <!--<BoxView Grid.Row="2" Grid.Column="2" Color="#E8F8F5" Margin="0,5,0,5" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame BorderColor="Transparent" Padding="10" HasShadow="False" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="Fees_Clicked" Grid.Row="2" Grid.Column="2" Source="fees.png" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="2" Grid.Column="2" Text="Fees Payment" FontAttributes="Bold"  HorizontalOptions="Center" VerticalOptions="Center" />
+        </StackLayout>
+
+     <!-- Row 3 -->
+        <StackLayout Grid.Row="3" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+                <!--<BoxView Grid.Row="3" Color="#E8F8F5" Margin="0,5,0,5" HeightRequest="100" BackgroundColor="Transparent" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame BorderColor="Transparent" Padding="10" HasShadow="False" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="Annual_Clicked" Grid.Row="3" Grid.Column="0" Source="annual.png" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="3" Text="Annual Calendar" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="End" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="3" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+                <!--<BoxView Grid.Row="3" Grid.Column="1" Color="#E8F8F5" Margin="0,5,0,5" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame Padding="10" HasShadow="False" BorderColor="Transparent" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="Comments_Clicked" Grid.Row="3" Grid.Column="1" Source="comments.png" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="3" Grid.Column="1" Text="Comments" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="End" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="3" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+                <!--<BoxView Grid.Row="3" Grid.Column="2" Color="#E8F8F5" Margin="0,5,0,5" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame Padding="10" BorderColor="Transparent" HasShadow="False" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="Bus_Clicked" Grid.Row="3" Grid.Column="2" Source="bus.jpg" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="3" Grid.Column="2" Text="Bus Location" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+        </StackLayout>
+
+     <!-- Row 4 -->
+        <StackLayout Grid.Row="4" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+                <!--<BoxView Grid.Row="4" Color="#E8F8F5" Margin="0,5,0,5" HeightRequest="100" BackgroundColor="Transparent" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame Padding="10" HasShadow="False" BorderColor="Transparent" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="Notice_Clicked" Grid.Row="4" Grid.Column="0" Source="notice.jpg" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="4" Text="Notice Board" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="4" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+               <!--<BoxView Grid.Row="4" Grid.Column="1" Color="#E8F8F5" Margin="0,5,0,5" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame Padding="10" HasShadow="False" BorderColor="Transparent" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="Profile_Clicked" Grid.Row="4" Grid.Column="1" Source="profile.png" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="4" Grid.Column="1" Text="Profile" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="4" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+                <!--<BoxView Grid.Row="4" Grid.Column="2" Color="#E8F8F5" Margin="0,5,0,5" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame Padding="10" BorderColor="Transparent" HasShadow="False" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="Settings_Clicked" Grid.Row="4" Grid.Column="2" Source="settings.png" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="4" Grid.Column="2" Text="Settings" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+        </StackLayout>
+
+    <!-- Row 5 -->
+        <StackLayout Grid.Row="5" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+               <!--<BoxView Grid.Row="5" Color="#E8F8F5" Margin="0,5,0,5" HeightRequest="100" BackgroundColor="Transparent" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame Padding="10" HasShadow="False" BorderColor="Transparent" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="Oclass_Clicked" Grid.Row="5" Grid.Column="0" Source="onlineclass.png" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="5" Text="Online Class" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="5" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid>
+                <!--<BoxView Grid.Row="5" Grid.Column="1" Color="#E8F8F5" Margin="0,5,0,5" BackgroundColor="Transparent" HeightRequest="100" WidthRequest="100" CornerRadius="50"/>-->
+                <Frame Padding="10" HasShadow="True" BorderColor="Transparent" BackgroundColor="#E8F8F5" HeightRequest="100" WidthRequest="100">
+                    <ImageButton Clicked="Otest_Clicked" Grid.Row="5" Grid.Column="1" Source="onlinetest.jpg" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center" Opacity="0.8" />
+                </Frame>
+            </Grid>
+            <Label Grid.Row="5" Grid.Column="1" Text="Online Test" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+        </StackLayout>
+        
+
+
+    </Grid>
+</ContentPage>

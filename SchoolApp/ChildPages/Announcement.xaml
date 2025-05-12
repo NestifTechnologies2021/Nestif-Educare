@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SchoolApp.ChildPages.Announcement"
+             >
+    
+    <Grid>
+        <Grid.RowDefinitions height="*"/>
+        <Grid.ColumnDefinitions width="*"/>
+
+        <Label 
+Text=  "{Binding Username}"
+FontFamily="Strande2"
+TextColor="Black"
+VerticalTextAlignment="Center"
+HorizontalTextAlignment="Center"
+VerticalOptions="Center"
+HeightRequest="50"
+FontSize="Medium"/>
+        
+        <StackLayout>
+        <Label  FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+        <ListView x:Name="announcementsListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Comment}" />
+                            <Label Text="{Binding SentBy}" />
+                            <Label Text="{Binding SetDate}" />
+                            <Label Text="{Binding SetTime}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+    </StackLayout>
+        </Grid>
+
+</ContentPage>
