@@ -1,4 +1,3 @@
-
 <Shell
     x:Class="SchoolApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -8,6 +7,7 @@
     xmlns:model="clr-namespace:SchoolApp.Models"
     Shell.TabBarIsVisible="False"
     xmlns:views="clr-namespace:SchoolApp.Views">
+    <!--xmlns:childpages="clr-namespace:SchoolApp.ChildPages"-->
 
     <ShellContent
         Title="Home"
@@ -20,6 +20,9 @@
         <ShellContent Title="Home" Icon="{x:Static model:Icons.Dashboard}" ContentTemplate="{DataTemplate views:HomePage}" />
         <ShellContent Title="Contact" Icon="{x:Static model:Icons.ContactUs}" ContentTemplate="{DataTemplate views:ContactPage}" />
         <ShellContent Title="About" Icon="{x:Static model:Icons.AboutUs}" ContentTemplate="{DataTemplate views:AboutPage}" />
+        <!--<ShellContent Title="Announcement" Icon="announcement.png" ContentTemplate="{DataTemplate childpages:Announcement}" />-->
+
+
     </FlyoutItem>
 
     <Shell.FlyoutFooter>

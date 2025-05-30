@@ -6,6 +6,8 @@ namespace SchoolApp.Views;
 
 public partial class HomePage : ContentPage
 {
+    private object loginPageViewModel;
+
     public LoginPageViewModel LoginPageViewModel { get; }
 
     public HomePage()
@@ -26,7 +28,7 @@ public partial class HomePage : ContentPage
 
     private async void Announcement_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new Announcement());
+          await Navigation.PushAsync(new Announcement(LoginPageViewModel));
     }
 
     private async void Homework_Clicked(object sender, EventArgs e)
