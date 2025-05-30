@@ -60,11 +60,23 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="ChildPages\Announcement.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="ChildPages\Announcement.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="Microsoft.Data.Services" Version="5.8.5" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.70" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Maui.Essentials" Version="9.0.70" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Syncfusion.Maui.Calendar" Version="20.4.38" />
 	</ItemGroup>
 
 	<ItemGroup>

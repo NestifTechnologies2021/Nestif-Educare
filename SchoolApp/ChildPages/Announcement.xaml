@@ -3,38 +3,54 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SchoolApp.ChildPages.Announcement"
              >
-    
-    <Grid>
-        <Grid.RowDefinitions height="*"/>
-        <Grid.ColumnDefinitions width="*"/>
-
+  <!--change the style-->
+    <Grid BackgroundColor="MintCream">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <Label 
-Text=  "{Binding Username}"
-FontFamily="Strande2"
-TextColor="Black"
-VerticalTextAlignment="Center"
-HorizontalTextAlignment="Center"
-VerticalOptions="Center"
-HeightRequest="50"
-FontSize="Medium"/>
-        
-        <StackLayout>
-        <Label  FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
-        <ListView x:Name="announcementsListView">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                    <ViewCell>
-                        <StackLayout>
-                            <Label Text="{Binding Comment}" />
-                            <Label Text="{Binding SentBy}" />
-                            <Label Text="{Binding SetDate}" />
-                            <Label Text="{Binding SetTime}" />
+        Text="{Binding Username}"
+        FontFamily="Strande2"
+        TextColor="Black"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+        VerticalOptions="Center"
+        HeightRequest="50"
+        FontSize="Medium"
+        Margin="0,20,0,10" />
+        <StackLayout Grid.Row="1" Padding="10">
+            <Label 
+            FontSize="24" 
+            FontAttributes="Bold" 
+            HorizontalOptions="Center" 
+            Text="Announcements" 
+            Margin="0,0,0,10" />
+            
+            <ScrollView>
+                <ListView x:Name="announcementsListView" ItemsSource="{Binding Announcement}" HasUnevenRows="True">
+                    <ListView.Header>
+                        <StackLayout BackgroundColor="LightGray" Padding="10">
+                            <Label Text="Recent Announcements" FontAttributes="Bold" FontSize="18" TextColor="Black" />
                         </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-    </StackLayout>
-        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame BorderColor="Gray" CornerRadius="5" Padding="10" Margin="0,5">
+                                    <StackLayout>
+                                        <Label Text="{Binding Comment}" FontAttributes="Bold" />
+                                        <Label Text="{Binding SentBy}" TextColor="DarkGray" />
+                                        <Label Text="{Binding SetDate}" TextColor="Gray" />
+                                        <Label Text="{Binding SetTime}" TextColor="Gray" />
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+    </Grid>
 
 </ContentPage>
