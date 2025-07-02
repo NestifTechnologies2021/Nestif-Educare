@@ -1,12 +1,118 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:local="clr-namespace:SchoolApp.ChildPages"
              x:Class="SchoolApp.ChildPages.Fees"
              Title="Fees">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Button Text="Paid Receipts"
+                         Clicked="OnPaidButtonClicked"
+                         BackgroundColor="Green"
+                         TextColor="White"
+                         CornerRadius="10"
+                         Grid.Column="2" Grid.Row="0"
+ Margin="10,10,10,50"/>
+       
+ <Grid Grid.Row="1" >
+    
+        
+        <!--<Border Stroke="Black">-->
+            <CollectionView ItemsSource="{Binding Fees}"  >
+                <CollectionView.Header>
+                    <Grid BackgroundColor="Gray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <CheckBox x:Name="selectAllCheckBox" 
+                                  VerticalOptions="Center"
+                                  CheckedChanged="OnSelectAllChanged"/>
+                        <Label Text="FeeName" VerticalTextAlignment="Center" VerticalOptions="Center" Grid.Column="1" Grid.Row="0" />
+                        <Label Text="Date" Grid.Column="2" Grid.Row="0" VerticalTextAlignment="Center" VerticalOptions="Center" />
+                        <Label Text="Dues" Grid.Column="3" Grid.Row="0"  VerticalTextAlignment="Center" VerticalOptions="Center"/>
+
+
+                        <CheckBox x:Name="myCheckBox"  VerticalOptions="Center"
+ IsChecked="{Binding IsChecked, Mode=TwoWay}"
+          CheckedChanged="OnCheckboxCheckedChanged"
+Grid.Column="0" Grid.Row="1" >
+                            <!--<CheckBox.Triggers>
+                                <DataTrigger TargetType="CheckBox" Binding="{Binding IsChecked}" Value="True">
+                                </DataTrigger>
+                            </CheckBox.Triggers>-->
+                        </CheckBox>
+                    </Grid>
+                </CollectionView.Header>
+                    
+                
+                    <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Fee">
+                        <!--<ViewCell>-->
+                            <Border Stroke="Black" StrokeLineCap="Square" StrokeThickness="2">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                       
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding FeeName}" VerticalTextAlignment="Center" VerticalOptions="Center" Grid.Column="1" Grid.Row="0" />
+                                    <Label VerticalTextAlignment="Center" VerticalOptions="Center" Text="{Binding DueDate,StringFormat='{}{0:dd-MM-yyyy}'}" Grid.Column="2" Grid.Row="0" />
+                                    <Label VerticalTextAlignment="Center" VerticalOptions="Center" Text="{Binding FeeAmount}" Grid.Column="3" Grid.Row="0" />
+                                   
+
+                                    <CheckBox x:Name="myCheckBoxList"  VerticalOptions="Center"
+                                          IsChecked="{Binding IsChecked, Mode=TwoWay}"
+                                              CheckedChanged="OnCheckboxCheckedChanged"
+                                          Grid.Column="0" Grid.Row="1" />
+                                   
+                                   
+
+                                </Grid>
+                            </Border>
+                        <!--</ViewCell>-->
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+       
+        </Grid>
+        <Button x:Name="PayButton" Text="Pay Now" 
+                                        Clicked="OnPayButtonClicked"
+                                        BackgroundColor="Red"
+                                        TextColor="White"
+                                        CornerRadius="10"
+                                        Grid.Column="2" Grid.Row="2"
+                
+                Margin="5,50,5,5"
+                Opacity="0.5"
+                IsEnabled= "False">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property="IsEnabled" Value="True" TargetType="Button">
+                            <Setter Property="Opacity" Value="1"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False" TargetType="Button">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            </Button>
+</Grid>
 </ContentPage>

@@ -4,9 +4,8 @@
              x:Class="SchoolApp.ChildPages.Comments"
              Title="Comments">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+       
+            
     </VerticalStackLayout>
 </ContentPage>
+    <!--the admin should have access to read and write of textbox; and the textbox should be stack after another --> 

@@ -12,3 +12,4 @@ public partial class Attendance : ContentPage
         };
     }
 }
+
