@@ -3,9 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SchoolApp.ChildPages.Comments"
              Title="Comments">
-    <VerticalStackLayout>
-       
-            
+    <VerticalStackLayout Padding="10" Spacing="10">
+        <Label Text="Comments"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <ScrollView>
+
+            <StackLayout BindableLayout.ItemsSource="{Binding Comments}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="LightGray"
+                               CornerRadius="5"
+                               Padding="10"
+                               Margin="5">
+                        <StackLayout>
+                            <Label Text="{Binding Commenter}" 
+                                       FontSize="18" 
+                                       FontAttributes="Bold" 
+                                       TextColor="Black" />
+                            <Label Text="{Binding Message}" 
+                                       FontSize="16" 
+                                       TextColor="Black" />
+                            <Label Text="{Binding DateTime, StringFormat='{0:MM/dd/yyyy HH:mm}'}" 
+                                       FontSize="14" 
+                                       TextColor="DarkGray" 
+                                       HorizontalOptions="End" />
+                        </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
     </VerticalStackLayout>
 </ContentPage>
     <!--the admin should have access to read and write of textbox; and the textbox should be stack after another --> 
