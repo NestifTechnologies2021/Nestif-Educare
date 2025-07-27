@@ -1,3 +1,5 @@
+using SchoolApp.ViewModels;
+
 namespace SchoolApp.ChildPages;
 
 public partial class Comments : ContentPage
@@ -10,6 +12,8 @@ public partial class Comments : ContentPage
         //        new Label { Text = "Welcome to Comments!" }
         //        }
         //};
+        InitializeComponent();
+        BindingContext = new CommentsViewModel();
 
     }
 }

@@ -3,33 +3,72 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SchoolApp.ChildPages.Profile"
              Title="Profile">
-    
-   
-        <Grid BackgroundColor="Red">
-        <Grid.RowDefinitions>
+    <StackLayout>
+        <Frame
+    HeightRequest="128"
+    WidthRequest="128"
+    Padding="4"
+    CornerRadius="64"
+    BorderColor="#2D5A7B"
+    HasShadow="False"
+    HorizontalOptions="Center"
+    VerticalOptions="Start"
+    Margin="0,24,0,16"
+    BackgroundColor="White">
+        <Image  
+       HeightRequest="120"
+       WidthRequest="120"
+       HorizontalOptions="Center"
+       VerticalOptions="Start"
+       Margin="0,24,0,16"
+         Source="profile.png"      >
+                
+                    <!--<Image.Source>
+                    <UriImageSource Uri="https://aka.ms/campus.jpg" />
+                </Image.Source>-->
+            
+        </Image>
+        </Frame>
+        <Border Stroke="Orange" StrokeThickness="2" BackgroundColor="LightGray">
+        <Grid  >
+            <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
 
-        </Grid.RowDefinitions>
+
+            </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="6*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Text="Name:"/>
-            <Label Grid.Row="0" Grid.Column="1" Text="Class:"/>
-            <Label Grid.Row="0" Grid.Column="0" Text="Section:"/>
-            <Label Grid.Row="0" Grid.Column="0" Text="Roll No.:"/>
-            <Label Grid.Row="0" Grid.Column="0" Text="Adm No.:"/>
-            <Label Grid.Row="0" Grid.Column="0" Text="DOB:"/>
-            <Label Grid.Row="0" Grid.Column="0" Text="Blood Group:"/>
-            <Label Grid.Row="0" Grid.Column="0" Text="Father's Name:"/>
-            <Label Grid.Row="0" Grid.Column="0" Text="Mother's Name:"/>
-            <Label Grid.Row="0" Grid.Column="0" Text="Contact No.:"/>
-            <Label Grid.Row="0" Grid.Column="0" Text="Parents' Email ID:"/>
-            <Label Grid.Row="0" Grid.Column="0" Text="Address:"/>
-        <Label Grid.Row="0" Grid.Column="0" Text="Parents' Aadhar No.:"/>
+            <Label Grid.Row="0" Grid.Column="0" Text="Name:" FontSize="16" Margin="0,4" />
+            <Label Grid.Row="1" Grid.Column="0" Text="Class:" FontSize="16" Margin="0,4"/>
+            <Label Grid.Row="2" Grid.Column="0" Text="Section:" FontSize="16" Margin="0,4"/>
+            <Label Grid.Row="3" Grid.Column="0" Text="Roll No.:" FontSize="16" Margin="0,4"/>
+            <Label Grid.Row="4" Grid.Column="0" Text="Adm No.:" FontSize="16" Margin="0,4"/>
+            <Label Grid.Row="5" Grid.Column="0" Text="DOB:" FontSize="16" Margin="0,4"/>
+            <Label Grid.Row="6" Grid.Column="0" Text="Blood Group:" FontSize="16" Margin="0,4"/>
+            <Label Grid.Row="7" Grid.Column="0" Text="Father's Name:" FontSize="16" Margin="0,4"/>
+            <Label Grid.Row="8" Grid.Column="0" Text="Mother's Name:" FontSize="16" Margin="0,4"/>
+            <Label Grid.Row="9" Grid.Column="0" Text="Contact No.:" FontSize="16" Margin="0,4"/>
+            <Label Grid.Row="10" Grid.Column="0" Text="Parents' Email ID:" FontSize="16" Margin="0,4"/>
+            <Label Grid.Row="11" Grid.Column="0" Text="Address:" FontSize="16" Margin="0,4"/>
+            <Label Grid.Row="12" Grid.Column="0" Text="Parents' Aadhar No.:" FontSize="16" Margin="0,4"/>
 
     </Grid>
+        </Border>
+    </StackLayout>
 
-    
+
 </ContentPage>
